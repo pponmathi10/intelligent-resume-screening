@@ -46,7 +46,7 @@ st.markdown("## 🧑 Candidate Details")
 skills = st.text_input("Skills (comma separated)")
 education = st.selectbox(
     "Education",
-    ["B.Sc", "B.Tech", "M.Sc", "MBA", "PhD"]
+    ["B.E","B.Sc", "B.Tech", "M.Sc", "MBA", "PhD"]
 )
 certifications = st.text_input("Certifications")
 experience = st.slider("Experience (Years)", 0, 20, 1)
