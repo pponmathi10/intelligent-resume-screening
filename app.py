@@ -141,8 +141,7 @@ if role == "Recruiter":
 if role == "Recruiter":
     st.header("🧑‍💼 Recruiter Resume Screening")
 
-    with open("sample_jd.txt") as f:
-        default_jd = f.read()
+    
 
     jd_text = st.text_area("Paste Job Description", height=200, value=default_jd)
 
