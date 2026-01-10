@@ -1,6 +1,6 @@
 import streamlit as st
 import PyPDF2
-from model import analyze_resume
+
 
 st.set_page_config(page_title="Intelligent Resume Screening", layout="wide")
 
