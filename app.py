@@ -85,8 +85,3 @@ if st.button("🚀 Screen My Resume"):
     
 
 
-
-    if prediction == "Hire":
-        st.success("🎯 You are suitable for this role!")
-    else:
-        st.error("❌ Profile does not match current requirements.")
