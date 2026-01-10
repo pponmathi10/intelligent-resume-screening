@@ -41,7 +41,7 @@ if role == "Candidate":
         st.subheader("📊 Resume Feedback")
 
       
-        st.progress(result["score"] / 100)
+        
 
         st.subheader("✅ Matched Skills")
         if result["matched_skills"]:
