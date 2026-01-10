@@ -73,7 +73,7 @@ if role == "Recruiter":
         st.subheader("📊 Screening Results")
 
     
-        st.progress(result["score"] / 100)
+        
 
         if result["recommendation"] == "SHORTLIST":
             st.success("✅ AI Recommendation: SHORTLIST")
