@@ -99,6 +99,6 @@ if role == "Recruiter":
 
     st.markdown("---")
     st.subheader("🎓 Profile Summary")
-    st.write(f"**Education:** {education}")
+
     st.write(f"**Experience:** {experience} years")
 
