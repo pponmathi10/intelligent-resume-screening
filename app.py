@@ -48,14 +48,7 @@ if role == "Candidate":
           
                
        
-        if result["missing_skills"]:
-            for skill in result["missing_skills"]:
-                st.write("•", skill)
-        else:
-            st.write("No missing skills")
-
-        st.info("💡 Improve your resume by adding missing skills and certifications.")
-
+       
 # ================== RECRUITER SCREEN ==================
 if role == "Recruiter":
     st.header("🧑‍💼 Recruiter Resume Screening")
