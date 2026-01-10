@@ -1,79 +1,86 @@
 import streamlit as st
 import PyPDF2
+from model import analyze_resume
 
 st.set_page_config(page_title="Intelligent Resume Screening", layout="wide")
 
 st.title("🤖 Intelligent Resume Screening System")
-st.caption("Role-Based AI Resume Screening")
+st.caption("AI-powered resume screening for candidates and recruiters")
 
-# ---------------- ROLE SELECTION ----------------
-role = st.sidebar.radio("Select Your Role", ["Candidate", "Recruiter"])
-
+# --------- Utility ---------
 def read_pdf(file):
     reader = PyPDF2.PdfReader(file)
     text = ""
     for page in reader.pages:
-        text += page.extract_text()
+        if page.extract_text():
+            text += page.extract_text()
     return text
 
-# ---------------- CANDIDATE SCREEN ----------------
+# --------- Role Selection ---------
+role = st.sidebar.radio("Select Role", ["Candidate", "Recruiter"])
+
+# ================== CANDIDATE SCREEN ==================
 if role == "Candidate":
     st.header("👤 Candidate Resume Screening")
 
-    resume_file = st.file_uploader("📤 Upload Your Resume (PDF)", type=["pdf"])
-    skills = st.text_input("💡 Skills (comma separated)")
-    education = st.text_input("🎓 Education")
-    experience = st.slider("🧑‍💻 Years of Experience", 0, 10, 0)
+    resume_file = st.file_uploader("Upload Resume (PDF)", type=["pdf"])
+    skills = st.text_input("Skills (comma separated)")
+    education = st.text_input("Education")
+    experience = st.slider("Years of Experience", 0, 15, 0)
 
     if resume_file:
         resume_text = read_pdf(resume_file)
-        combined_text = resume_text + " " + skills + " " + education
+        combined_resume = resume_text + " " + skills + " " + education
 
-        
-        
+        with open("sample_jd.txt") as f:
+            jd_text = f.read()
 
-        result = analyze_resume(combined_text, jd_text)
+        result = analyze_resume(combined_resume, jd_text)
 
         st.markdown("---")
-        st.subheader("📊 Resume Evaluation Feedback")
+        st.subheader("📊 Resume Feedback")
 
         st.metric("Resume Strength Score", f"{result['score']}%")
         st.progress(result["score"] / 100)
 
-        st.subheader("✅ Skills Identified")
-        for skill in result["matched_skills"]:
-            st.write("•", skill)
+        st.subheader("✅ Matched Skills")
+        if result["matched_skills"]:
+            for skill in result["matched_skills"]:
+                st.write("•", skill)
+        else:
+            st.write("No matched skills found")
 
-        st.subheader("⚠️ Skills to Improve")
-        for skill in result["missing_skills"]:
-            st.write("•", skill)
+        st.subheader("⚠ Skills to Improve")
+        if result["missing_skills"]:
+            for skill in result["missing_skills"]:
+                st.write("•", skill)
+        else:
+            st.write("No missing skills")
 
-        st.info("💡 Tip: Add missing skills or certifications to improve your resume")
+        st.info("💡 Improve your resume by adding missing skills and certifications.")
 
-# ---------------- RECRUITER SCREEN ----------------
+# ================== RECRUITER SCREEN ==================
 if role == "Recruiter":
     st.header("🧑‍💼 Recruiter Resume Screening")
 
-    jd_text = st.text_area(
-        "📄 Paste Job Description",
-        height=200,
-        
-    )
+    with open("sample_jd.txt") as f:
+        default_jd = f.read()
 
-    resume_file = st.file_uploader("📤 Upload Candidate Resume (PDF)", type=["pdf"])
+    jd_text = st.text_area("Paste Job Description", height=200, value=default_jd)
 
+    resume_file = st.file_uploader("Upload Candidate Resume (PDF)", type=["pdf"])
     candidate_name = st.text_input("Candidate Name")
-    experience = st.slider("Years of Experience", 0, 15, 1)
+    experience = st.slider("Candidate Experience (Years)", 0, 20, 1)
 
-    if resume_file and jd_text:
+    if resume_file and jd_text.strip() != "":
         resume_text = read_pdf(resume_file)
-        
+        result = analyze_resume(resume_text, jd_text)
 
         st.markdown("---")
-        st.subheader("📊 Screening Results")
+        st.subheader("📊 Screening Result")
 
-    
-        
+        st.metric("Match Score", f"{result['score']}%")
+        st.progress(result["score"] / 100)
 
         if result["recommendation"] == "SHORTLIST":
             st.success("✅ AI Recommendation: SHORTLIST")
@@ -84,21 +91,22 @@ if role == "Recruiter":
 
         with col1:
             st.subheader("✔ Matched Skills")
-            for skill in result["matched_skills"]:
-                st.write("•", skill)
+            if result["matched_skills"]:
+                for skill in result["matched_skills"]:
+                    st.write("•", skill)
+            else:
+                st.write("None")
 
         with col2:
             st.subheader("❌ Missing Skills")
-            for skill in result["missing_skills"]:
-                st.write("•", skill)
+            if result["missing_skills"]:
+                for skill in result["missing_skills"]:
+                    st.write("•", skill)
+            else:
+                st.write("None")
 
         st.markdown("---")
         st.subheader("📄 Candidate Summary")
         st.write(f"**Name:** {candidate_name}")
         st.write(f"**Experience:** {experience} years")
-
-    st.markdown("---")
-    st.subheader("🎓 Profile Summary")
-
-    st.write(f"**Experience:** {experience} years")
 
