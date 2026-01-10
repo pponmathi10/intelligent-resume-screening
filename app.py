@@ -43,7 +43,7 @@ if role == "Candidate":
       
         
 
-        st.subheader("✅ Matched Skills")
+        
         
           
                 st.write("•", skill)
