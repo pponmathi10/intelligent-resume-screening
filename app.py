@@ -83,8 +83,7 @@ if st.button("🚀 Screen My Resume"):
     )
 
     
-   
-    confidence = max(model.predict_proba(resume_vec)[0]) * 100
+
 
     st.markdown("## 📊 Screening Result")
     st.markdown(f"### ✅ Decision: **{prediction}**")
