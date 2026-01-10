@@ -57,7 +57,7 @@ if role == "Recruiter":
     jd_text = st.text_area(
         "📄 Paste Job Description",
         height=200,
-        value=open("sample_jd.txt").read()
+        
     )
 
     resume_file = st.file_uploader("📤 Upload Candidate Resume (PDF)", type=["pdf"])
