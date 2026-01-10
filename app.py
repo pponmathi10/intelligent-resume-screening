@@ -32,7 +32,7 @@ if role == "Candidate":
         resume_text = read_pdf(resume_file)
         combined_resume = resume_text + " " + skills + " " + education
 
-        with open("sample_jd.txt") as f:
+        
             jd_text = f.read()
 
         result = analyze_resume(combined_resume, jd_text)
