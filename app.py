@@ -35,7 +35,7 @@ if role == "Candidate":
         
             
 
-        result = analyze_resume(combined_resume, jd_text)
+       
 
         st.markdown("---")
         st.subheader("📊 Resume Feedback")
