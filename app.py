@@ -143,8 +143,6 @@ if role == "Recruiter":
 
     
 
-    jd_text = st.text_area("Paste Job Description", height=200, value=default_jd)
-
     resume_file = st.file_uploader("Upload Candidate Resume (PDF)", type=["pdf"])
     candidate_name = st.text_input("Candidate Name")
     experience = st.slider("Candidate Experience (Years)", 0, 20, 1)
