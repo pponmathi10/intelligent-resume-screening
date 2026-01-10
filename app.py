@@ -85,9 +85,6 @@ if st.button("🚀 Screen My Resume"):
     
 
 
-    st.markdown("## 📊 Screening Result")
-    
-    st.markdown(f"### 🔍 Confidence Score: **{confidence:.2f}%**")
 
     if prediction == "Hire":
         st.success("🎯 You are suitable for this role!")
