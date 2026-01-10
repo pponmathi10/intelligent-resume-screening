@@ -82,7 +82,7 @@ if st.button("🚀 Screen My Resume"):
         str(experience)
     )
 
-    resume_vec = vectorizer.transform([final_text])
+    
     prediction = model.predict(resume_vec)[0]
     confidence = max(model.predict_proba(resume_vec)[0]) * 100
 
