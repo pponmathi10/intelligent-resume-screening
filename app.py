@@ -3,8 +3,6 @@ import pandas as pd
 
 
 
-import PyPDF2
-import io
 
 # Page Config
 st.set_page_config(page_title="AI Resume Intelligence", page_icon="🎯", layout="wide")
