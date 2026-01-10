@@ -40,7 +40,7 @@ if role == "Candidate":
         st.markdown("---")
         st.subheader("📊 Resume Feedback")
 
-        st.metric("Resume Strength Score", f"{result['score']}%")
+      
         st.progress(result["score"] / 100)
 
         st.subheader("✅ Matched Skills")
