@@ -70,12 +70,7 @@ if st.button("🚀 Screen My Resume"):
     resume_text = ""
 
     # Priority: uploaded resume
-    if uploaded_file is not None:
-        
-
-    # Else manual resume
-    elif manual_resume.strip() != "":
-        resume_text = manual_resume
+   
 
     # Combine resume + form details
     final_text = (
