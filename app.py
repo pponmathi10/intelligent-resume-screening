@@ -26,7 +26,7 @@ y = df["Recruiter Decision"]
 
 # ---------------- TRAIN MODEL ----------------
 
-X_vec = vectorizer.fit_transform(X)
+
 
 model = LogisticRegression(max_iter=1000)
 model.fit(X_vec, y)
