@@ -72,7 +72,7 @@ if role == "Recruiter":
         st.markdown("---")
         st.subheader("📊 Screening Results")
 
-        st.metric("Match Score", f"{result['score']}%")
+    
         st.progress(result["score"] / 100)
 
         if result["recommendation"] == "SHORTLIST":
