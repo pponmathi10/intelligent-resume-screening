@@ -1,3 +1,0 @@
-We are looking for a Software Developer with strong skills in:
-Python, Java, Machine Learning, SQL, AWS, Docker.
-Experience in building ML models and backend systems preferred.
