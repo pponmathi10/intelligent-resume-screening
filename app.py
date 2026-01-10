@@ -47,10 +47,7 @@ if role == "Candidate":
         
           
                
-        else:
-            st.write("No matched skills found")
-
-        st.subheader("⚠ Skills to Improve")
+       
         if result["missing_skills"]:
             for skill in result["missing_skills"]:
                 st.write("•", skill)
