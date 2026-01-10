@@ -71,10 +71,7 @@ if st.button("🚀 Screen My Resume"):
 
     # Priority: uploaded resume
     if uploaded_file is not None:
-        if uploaded_file.type == "application/pdf":
-           
-        else:
-            resume_text = uploaded_file.read().decode("utf-8")
+        
 
     # Else manual resume
     elif manual_resume.strip() != "":
