@@ -29,7 +29,7 @@ y = df["Recruiter Decision"]
 
 
 
-model.fit(X_vec, y)
+
 
 # ---------------- PDF TEXT EXTRACTION ----------------
 def extract_text_from_pdf(uploaded_file):
