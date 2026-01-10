@@ -1,22 +1,18 @@
 # Intelligent Resume Screening System
 
-An AI-powered resume screening system using NLP and Machine Learning.
+AI-powered resume screening using NLP and ML with Streamlit.
 
 ## Features
-- Resume Upload (PDF)
-- Skill Matching
-- Match Score
-- AI Recommendation
-- Job Description Comparison
-- Streamlit UI
-
-## Tech Stack
-- Python
-- Streamlit
-- Scikit-learn
-- NLP (SpaCy)
+- Candidate & Recruiter screens
+- Resume upload (PDF)
+- Skill matching
+- Match score
+- AI recommendation
 
 ## Run Locally
-```bash
 pip install -r requirements.txt
 streamlit run app.py
+
+## Deploy
+Upload this repo to GitHub and deploy on Streamlit Cloud.
+
