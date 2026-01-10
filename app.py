@@ -33,7 +33,7 @@ y = df["Recruiter Decision"]
 
 # ---------------- PDF TEXT EXTRACTION ----------------
 def extract_text_from_pdf(uploaded_file):
-    reader = PyPDF2.PdfReader(uploaded_file)
+   
     text = ""
     for page in reader.pages:
         if page.extract_text():
@@ -72,7 +72,7 @@ if st.button("🚀 Screen My Resume"):
     # Priority: uploaded resume
     if uploaded_file is not None:
         if uploaded_file.type == "application/pdf":
-            resume_text = extract_text_from_pdf(uploaded_file)
+           
         else:
             resume_text = uploaded_file.read().decode("utf-8")
 
