@@ -36,7 +36,7 @@ if resume_file:
     resume_text = read_pdf(resume_file)
     combined_resume = resume_text + " " + skills + " " + education
 
-    result = analyze_resume(combined_resume, jd_text)
+    
 
     st.markdown("---")
     st.header("📊 Screening Results")
