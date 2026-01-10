@@ -42,7 +42,7 @@ if resume_file:
     st.header("📊 Screening Results")
 
     # Match Score
-    st.metric("Overall Match Score", f"{result['score']}%")
+    
     st.progress(result["score"] / 100)
 
     # Recommendation
