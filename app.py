@@ -33,7 +33,7 @@ if role == "Candidate":
         combined_resume = resume_text + " " + skills + " " + education
 
         
-            jd_text = f.read()
+            
 
         result = analyze_resume(combined_resume, jd_text)
 
