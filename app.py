@@ -5,7 +5,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 st.set_page_config(page_title="Intelligent Resume Screening", layout="wide")
 
 st.title("🤖 Intelligent Resume Screening System")
-st.caption("AI-powered resume screening for Candidates & Recruiters")
 
 # ---------------- SKILLS DATABASE ----------------
 SKILLS = [
