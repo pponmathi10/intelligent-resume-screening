@@ -44,7 +44,7 @@ if role == "Candidate":
         
 
         st.subheader("✅ Matched Skills")
-        if result["matched_skills"]:
+        
             for skill in result["matched_skills"]:
                 st.write("•", skill)
         else:
