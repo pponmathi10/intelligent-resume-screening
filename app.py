@@ -67,7 +67,7 @@ if role == "Recruiter":
 
     if resume_file and jd_text:
         resume_text = read_pdf(resume_file)
-        result = analyze_resume(resume_text, jd_text)
+        
 
         st.markdown("---")
         st.subheader("📊 Screening Results")
