@@ -46,7 +46,7 @@ if role == "Candidate":
         
         
           
-                st.write("•", skill)
+               
         else:
             st.write("No matched skills found")
 
