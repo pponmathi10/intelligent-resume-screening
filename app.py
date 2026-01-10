@@ -12,7 +12,7 @@ st.sidebar.header("📄 Job Description")
 jd_text = st.sidebar.text_area(
     "Paste Job Description",
     height=250,
-    value=open("sample_jd.txt").read()
+    
 )
 
 # Resume Upload
